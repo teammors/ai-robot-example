@@ -1,2 +1,18 @@
 server:
   port: 8900
+
+#Please modify the following parameters to your own address and parameters.
+ai-config:
+  robot-token: teammors-robot-token
+  agent-type: 2
+  dify:
+    api-url: http://<Dify API address>/v1/chat-messages
+    api-key: dify apiKey
+  coze:
+    api-url: https://api.coze.cn/v3/chat
+    access-token: cozeAccessToken
+    bot-id: BotId
+    user-id: UserId
+  fastgpt:
+    api-url: http://<FastGPT>API Address
+    api-key: FastGPT apiKey
