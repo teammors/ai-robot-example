@@ -126,6 +126,4 @@ Teammors currently supports the following platforms: **macOS, Android, iOS, Wind
 <img src="./images/robot-market.png" width="700" alt="Configuration File">
 
 
----
 
-## Project Structure
