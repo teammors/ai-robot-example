@@ -84,11 +84,13 @@ Teammors currently supports the following platforms: **macOS, Android, iOS, Wind
 
 3. **Create Bot**: Create a bot
 
-<img src="./images/create-bot.png" width="600" alt="Create Bot">
+<img src="./images/robot-manage.png" width="700" alt="Configuration File">
+
+<img src="./images/add-robot.png" width="600" alt="Create Bot">
 
 4. **Configure Bot**: Configure basic bot information
 
-<img src="./images/configure-bot.png" width="600" alt="Configure Bot">
+<img src="./images/robot-info.png" width="600" alt="Configure Bot">
 
 5. **Copy Token**: Copy the bot's token for later use
 
@@ -112,9 +114,17 @@ Teammors currently supports the following platforms: **macOS, Android, iOS, Wind
 
 2. **Submitting for Review**: Submit the robot information to the platform for review (1-2 hours).
 
-3. **Listing the Robot**: After approval, list the robot on the development page.
+4. **Listing the Robot**: After approval, list the robot on the development page.
 
-4. **User Usage**: Users can use the robot by following it or interacting with it directly.
+      
+<img src="./images/robot-dev.png" width="700" alt="Configuration File">
+
+
+6. **User Usage**: Users can use the robot by following it or interacting with it directly.
+
+   
+<img src="./images/robot-market.png" width="700" alt="Configuration File">
+
 
 ---
 
