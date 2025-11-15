@@ -1,6 +1,7 @@
 package com.teammors.robot.example.helper;
 
 import com.teammors.robot.example.agent.DifyChatClient;
+import com.teammors.robot.example.utils.PositiveIntegerValidator;
 import com.teammors.robot.ws.TRobotClient;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.Call;
@@ -36,7 +37,7 @@ public class DifyMessageHelper implements Runnable{
             // 为每个请求生成唯一标识
             String requestId = UUID.randomUUID().toString();
             log.info("Request [{}]: {}", requestId, message);
-            String preMessage = "Okay, this is Dify. Please wait a moment while I'm processing your request...";
+            String preMessage = "AI is processing...";
             processResponse(chatId, requestId, preMessage);
             String completeMessage = difyChatClient.waitAIResponse(message);
             // 处理响应，确保使用正确的userId
@@ -50,9 +51,15 @@ public class DifyMessageHelper implements Runnable{
         return true;
     }
 
-    private boolean processResponse(String userId, String requestId, String responseBody) {
-        String toUid = TRobotClient.instance().mId+"_"+userId;
-        return TRobotClient.instance().sendSingleUserTxtMessage(responseBody,toUid,1);
+    private boolean processResponse(String chatId, String requestId, String responseBody) {
+
+        if(PositiveIntegerValidator.isPositiveInteger(chatId)) {
+            String toUid = TRobotClient.instance().mId+"_"+chatId;
+            return TRobotClient.instance().sendSingleUserTxtMessage(responseBody,toUid,1);
+        }else {
+            return TRobotClient.instance().sendToGroupTxtMessage(responseBody,chatId,1);
+        }
+
     }
 
 

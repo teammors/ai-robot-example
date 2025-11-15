@@ -37,7 +37,7 @@
         <dependency>
             <groupId>io.github.teammors</groupId>
             <artifactId>TeamMorsRobotSDK</artifactId>
-            <version>1.0.3</version>
+            <version>1.0.4</version>
             <scope>compile</scope>
         </dependency>
 
@@ -82,7 +82,7 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
-                    <mainClass>com.im.external.IMExternalApplicatipn</mainClass>
+                    <mainClass>com.teammors.robot.example.RobotExampleApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

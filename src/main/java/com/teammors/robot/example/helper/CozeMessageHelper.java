@@ -1,6 +1,7 @@
 package com.teammors.robot.example.helper;
 
 import com.teammors.robot.example.agent.CozeChatClient;
+import com.teammors.robot.example.utils.PositiveIntegerValidator;
 import com.teammors.robot.ws.TRobotClient;
 import lombok.extern.slf4j.Slf4j;
 
@@ -32,7 +33,7 @@ public class CozeMessageHelper implements Runnable{
 
             String requestId = UUID.randomUUID().toString();
             log.info("Request [{}]: {}", requestId, message);
-            String preMessage = "Okay, this is Coze. Please wait a moment while I process your request...";
+            String preMessage = "AI is processing...";
             processResponse(chatId, requestId, preMessage);
             String completeMessage = cozeChatClient.waitAIResponse(message);
             if(!completeMessage.trim().isEmpty()) {
@@ -45,8 +46,14 @@ public class CozeMessageHelper implements Runnable{
         return true;
     }
 
-    private boolean processResponse(String userId, String requestId, String responseBody) {
-        String toUid = TRobotClient.instance().mId+"_"+userId;
-        return TRobotClient.instance().sendSingleUserTxtMessage(responseBody,toUid,1);
+    private boolean processResponse(String chatId, String requestId, String responseBody) {
+
+        if(PositiveIntegerValidator.isPositiveInteger(chatId)) {
+            String toUid = TRobotClient.instance().mId+"_"+chatId;
+            return TRobotClient.instance().sendSingleUserTxtMessage(responseBody,toUid,1);
+        }else {
+            return TRobotClient.instance().sendToGroupTxtMessage(responseBody,chatId,1);
+        }
+
     }
 }
