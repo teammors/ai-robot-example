@@ -13,12 +13,16 @@ RUN addgroup -S spring && adduser -S spring -G spring
 USER spring
 
 WORKDIR /app
-COPY --from=builder /app/target/*.jar robot-example.jar
+COPY --from=builder /app/target/*.jar app.jar
 
-EXPOSE 8900
+# 创建配置目录（可选，用于默认配置）
+RUN mkdir -p /app/config
+
+EXPOSE 8080
 
 # 健康检查
 HEALTHCHECK --interval=30s --timeout=3s --start-period=60s --retries=3 \
-    CMD curl -f http://localhost:8900/actuator/health || exit 1
+    CMD curl -f http://localhost:8080/actuator/health || exit 1
 
-ENTRYPOINT ["java", "-jar", "/app/robot-example.jar"]
+# 使用外部配置文件启动
+ENTRYPOINT ["java", "-jar", "/app/app.jar", "--spring.config.location=file:/app/config/application.yml"]
