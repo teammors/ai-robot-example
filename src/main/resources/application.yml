@@ -1,18 +1,25 @@
 server:
   port: 8900
 
-#Please modify the following parameters to your own address and parameters.
 ai-config:
-  robot-token: teammors-robot-token
+  # Teammors
+  robot-token: sFwQufDz03tzzLtyvwwYIPJjEa5wjX7C
+  # 王者荣耀
+#  robot-token: LGjtghBY2MbgeOzaa4Jl1xTVKli2ZebO
   agent-type: 2
   dify:
-    api-url: http://<Dify API address>/v1/chat-messages
-    api-key: dify apiKey
+    api-url: http://14.103.134.95:8080/v1/chat-messages
+    api-key: app-0qfsjuQpn2gXYKlDGIzdsQaJ
   coze:
     api-url: https://api.coze.cn/v3/chat
-    access-token: cozeAccessToken
-    bot-id: BotId
-    user-id: UserId
+    # 王者荣耀
+#    access-token: pat_eL29TAQXTK1KkDxVW7nd780HywYECsCIcUQGokCZsvHK8WcjzLEIAaFeclZZygaP
+#    bot-id: 7571764397195509770
+#    user-id: 123456789
+    # Teammors
+    access-token: sat_XPcKPT1iB6GOlSS7SEQhDAzn57rXXPG1l3Il2U2rjnEzh9aX77WKUQ2jLkZekpUH
+    bot-id: 7569055123377569818
+    user-id: 123456789
   fastgpt:
-    api-url: http://<FastGPT>API Address
-    api-key: FastGPT apiKey
+    api-url: http://<FastGPT>API地址
+    api-key: FastGPT应用API_KEY
