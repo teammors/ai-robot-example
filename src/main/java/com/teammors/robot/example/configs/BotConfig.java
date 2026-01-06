@@ -22,6 +22,8 @@ public class BotConfig {
     // FastGPT
     private FastGPTConfig fastgpt;
 
+    private SpringAIConfig springAI;
+
     // Dify
     public static class DifyConfig {
         private String apiUrl;
@@ -69,6 +71,19 @@ public class BotConfig {
         public void setApiKey(String apiKey) { this.apiKey = apiKey; }
     }
 
+    // SpringAI
+    public static class SpringAIConfig {
+        private String apiUrl;
+        private String apiKey;
+
+        // getters and setters
+        public String getApiUrl() { return apiUrl; }
+        public void setApiUrl(String apiUrl) { this.apiUrl = apiUrl; }
+
+        public String getApiKey() { return apiKey; }
+        public void setApiKey(String apiKey) { this.apiKey = apiKey; }
+    }
+
     // getters and setters for main class
     public String getRobotToken() { return robotToken; }
     public void setRobotToken(String robotToken) { this.robotToken = robotToken; }
@@ -84,4 +99,9 @@ public class BotConfig {
 
     public FastGPTConfig getFastgpt() { return fastgpt; }
     public void setFastgpt(FastGPTConfig fastgpt) { this.fastgpt = fastgpt; }
+
+    public SpringAIConfig getSpringAI() { return springAI; }
+    public void setSpringAI(SpringAIConfig springAIConfig) {
+        this.springAI =  springAIConfig;
+    }
 }

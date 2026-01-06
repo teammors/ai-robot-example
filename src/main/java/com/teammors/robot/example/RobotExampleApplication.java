@@ -50,7 +50,11 @@ public class RobotExampleApplication implements CommandLineRunner, ApplicationLi
             robotExample.initDify(robotExample.difyApiUrl,robotExample.difyApiKey);
         }else if(robotExample.agentType == 2){
             robotExample.initCoze(robotExample.cozeApiUrl, robotExample.cozeAccessToken, robotExample.cozeBotId,  robotExample.cozeUserId);
+        }else if(robotExample.agentType == 4){
+            robotExample.initSpringAI(robotExample.springApiUrl, robotExample.springApiKey);
         }
     }
+
+
 
 }
